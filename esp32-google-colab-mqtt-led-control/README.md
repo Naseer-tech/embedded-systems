@@ -8,7 +8,6 @@ Develop an IoT-based LED control system where Google Colab publishes MQTT messag
 
 * ESP32
 * LED
-* 220 Ω Resistor
 * Wi-Fi Network
 * Google Colab
 * MQTT Broker
