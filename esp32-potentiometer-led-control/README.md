@@ -9,7 +9,6 @@ Develop an LED brightness control system using an ESP32, a potentiometer, and Mi
 * ESP32
 * Potentiometer
 * LED
-* 220 Ω Resistor
 * Jumper Wires
 
 ## Topics Covered
