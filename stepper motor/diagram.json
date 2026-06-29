@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "M.Naseer",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -19.2,
+      "left": 129.64,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -92.39,
+      "left": -124.37,
+      "attrs": { "size": "17" }
+    },
+    { "type": "wokwi-a4988", "id": "drv1", "top": 168, "left": -4.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "drv1:STEP", "esp:18", "green", [ "h-28.8", "v38.4", "h355.2", "v-163.2" ] ],
+    [ "drv1:DIR", "esp:19", "green", [ "h-19.2", "v9.6", "h307.2", "v-134.4" ] ],
+    [ "drv1:VDD", "esp:3V3", "red", [ "h48.15", "v-220.72" ] ],
+    [ "drv1:GND.1", "esp:GND.1", "black", [ "v0.08", "h67.35", "v-67.2" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "green", [ "h-48", "v-9.6", "h9.6" ] ],
+    [ "stepper1:A+", "drv1:1A", "green", [ "v67.2", "h105.6", "v19.2" ] ],
+    [ "stepper1:A-", "drv1:1B", "green", [ "v38.4", "h144", "v96" ] ],
+    [ "stepper1:B+", "drv1:2A", "green", [ "v57.6", "h115.2", "v57.6" ] ],
+    [ "stepper1:B-", "drv1:2B", "green", [ "v48", "h95.99", "v57.6" ] ]
+  ],
+  "dependencies": {}
+}
