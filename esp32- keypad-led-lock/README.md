@@ -9,7 +9,6 @@ Develop a password-protected LED control system using an ESP32, a 4×4 matrix ke
 * ESP32
 * 4×4 Matrix Keypad
 * LED
-* 220 Ω Resistor
 * Jumper Wires
 
 ## Topics Covered
