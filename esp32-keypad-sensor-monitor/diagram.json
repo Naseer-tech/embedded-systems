@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "M.Naseer",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 9.6,
+      "left": -167.96,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -184.4,
+      "left": 168.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -243.2,
+      "left": -176.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "board-bmp180",
+      "id": "bmp1",
+      "top": -80.96,
+      "left": 0.26,
+      "attrs": { "temperature": "18.6", "pressure": "88260" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -9.3, "left": -322.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "keypad1:R1", "esp:19", "green", [ "v0" ] ],
+    [ "keypad1:R2", "esp:18", "#8f4814", [ "v0" ] ],
+    [ "keypad1:R3", "esp:5", "gold", [ "v9.6", "h-201.9", "v-19.2" ] ],
+    [ "keypad1:R4", "esp:17", "white", [ "v-9.6", "h-192.2", "v28.8" ] ],
+    [ "keypad1:C1", "esp:16", "green", [ "v19.2", "h-230.5", "v-19.2" ] ],
+    [ "keypad1:C2", "esp:4", "green", [ "v28.8", "h-240", "v-9.6" ] ],
+    [ "keypad1:C3", "esp:2", "green", [ "v0" ] ],
+    [ "esp:21", "keypad1:C4", "green", [ "h297.6", "v48" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h-48", "v432.1" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-115.2", "v153.6", "h249.6", "v67.2" ] ],
+    [ "lcd1:SDA", "esp:22", "green", [ "h-28.8", "v173", "h192", "v86.4" ] ],
+    [ "lcd1:SCL", "esp:23", "green", [ "h-9.6", "v144.3", "h153.6", "v76.8" ] ],
+    [ "bmp1:SDA", "esp:22", "green", [ "h38.4", "v105.79" ] ],
+    [ "bmp1:SCL", "esp:23", "green", [ "h9.6", "v105.79" ] ],
+    [ "bmp1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "bmp1:GND", "esp:GND.2", "black", [ "h38.4", "v86.59" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v28.8", "h124.8", "v-134.4", "h124.8" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v-105.6", "h220.8" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
